@@ -32,8 +32,7 @@ def handle_client_request(data, address):
 
     server_socket.sendto(response.encode(), address)
 
-    # def authenticate_client(username):
-    # return username in client_privileges and client_privileges[username] == "write"
+
 
 def client_handler():
     while True:
