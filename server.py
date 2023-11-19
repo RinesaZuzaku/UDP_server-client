@@ -47,3 +47,7 @@ server_address = ("127.0.0.1", 12345)
 server_socket.bind(server_address)
 
 print("Server is listening on", server_address)
+while True:
+    user_input = input("Enter request (e.g., user1|write|write|example.txt|new data): ")
+    user_input = user_input.encode()
+    server_socket.sendto(user_input, server_address)
