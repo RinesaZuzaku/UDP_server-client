@@ -35,3 +35,21 @@ def handle_client_request(data, address):
         response = "Invalid username"
 
     server_socket.sendto(response.encode(), address)
+
+
+def authenticate_client(username):
+    return client_privileges.get(username, [])
+
+def client_handler():
+    while True:
+        data, address = server_socket.recvfrom(1024)
+        client_thread = threading.Thread(target=handle_client_request, args=(data, address))
+        client_thread.start()
+
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+server_address = ("192.168.132.78", 12345)
+server_socket.bind(server_address)
+
+print("Server is listening on", server_address)
+
+threading.Thread(target=client_handler).start()
