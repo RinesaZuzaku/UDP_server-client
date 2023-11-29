@@ -53,3 +53,13 @@ server_socket.bind(server_address)
 print("Server is listening on", server_address)
 
 threading.Thread(target=client_handler).start()
+
+while True:
+    user_input = input("Enter request (e.g., user1|write|example.txt|new data or 'write exit' to end): ")
+
+    if user_input == "write exit":
+        print("Ending the server loop. Clients can finish their operations.")
+        break
+
+    user_input = user_input.encode()
+    server_socket.sendto(user_input, server_address)
