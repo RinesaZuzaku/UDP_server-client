@@ -2,6 +2,8 @@ Projekti i dyte ne lenden Rrjeta Kompjuterike qe paraqet aplikimin e sockets dhe
 
 Programi eshte i organizuar ne dy skripta server.py dhe client.py, per ekzekutim duhet te behet run se pari server.py
 
+                                          -KERKESAT E PROJEKTIT-
+                                         
 SERVERI:
 1. Të vendosen variabla te cilat përmbajnë numrin e portit (numri i portit të jetë i
 çfarëdoshëm) dhe IP adresën;
