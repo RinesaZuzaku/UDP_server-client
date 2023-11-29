@@ -16,3 +16,24 @@ server_address = ("127.0.0.1", 12345)
 
 # Authentication: Each client has a username
 username = input("Enter your username: ")
+
+while True:
+
+    operation = input("Enter the operation (read or write , exit to terminate): ")
+
+    if operation == "exit":
+        break
+
+    filename = input("Enter the filename: ")
+
+
+    if operation == "write":
+        data = input("Enter text to append to the file: ")
+    else:
+        data = ""
+
+    # Send the request
+    send_request(username, operation, filename, data, server_address)
+
+# Close the client socket
+client_socket.close()
